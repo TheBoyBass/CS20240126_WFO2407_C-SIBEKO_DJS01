@@ -7,28 +7,23 @@
 
 // Given Parameters
 const InitVelocity = 10000; // Initial velocity (km/h)
-const Acceleration = 3; // Space Crafts cceleration (m/s^2)
+const Acceleration = 3; // Space Crafts aceleration (m/s^2)
 const OneHourInSeconds = 3600; // duration of the calculation in seconds (1 hour)
 const InitDistance = 0; // distance from reference point (km)
 const Initfuel = 5000; // Initial fuel (kg)
 const FuelBurnRate = 0.5; // fuel burn rate (kg/s)
 
-
-const NewDistance = InitDistance + (InitVelocity * OneHourInSeconds) //calcultes new distance
-const RemainingFuel = FuelBurnRate * OneHourInSeconds //calculates remaining fuel
-const NewVelocity = calcNewVel(Acceleration , InitVelocity, OneHourInSeconds) //calculates new velocity based on acceleration
-
 // Pick up an error with how the function below is called and make it robust to such errors
-calcNewVel = (InitVelocity, Acceleration , OneHourInSeconds) => { 
+const CalcNewVelocity = ( Acceleration ,InitVelocity, OneHourInSeconds) => { 
   return InitVelocity + (Acceleration *OneHourInSeconds)
 }
+
+const NewDistance = InitDistance + (InitVelocity * OneHourInSeconds) //calcultes new distance
+const RemainingFuel = Initfuel - (FuelBurnRate * OneHourInSeconds) //calculates remaining fuel
+const NewVelocity = CalcNewVelocity(Acceleration , InitVelocity, OneHourInSeconds) //calculates new velocity based on acceleration
+
+
 
 console.log(`Corrected New Velocity: ${NewVelocity} km/h`);
 console.log(`Corrected New Distance: ${NewDistance} km`);
 console.log(`Corrected Remaining Fuel: ${RemainingFuel} kg`);
-
-
-
-
-
-
