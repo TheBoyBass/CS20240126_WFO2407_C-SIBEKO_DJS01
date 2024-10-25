@@ -7,7 +7,7 @@
 
 // Given Parameters
 const InitVelocityKmph = 10000; // Initial velocity (km/h)
-const InitVelocityMps = InitVelocityKmph * (1000 / 3600)
+const InitVelocityMps = InitVelocityKmph * (1000 / 3600) //Converting Initial Velocity to meters per second for the calculation of new velocity
 const Acceleration = 3; // Space Crafts aceleration (m/s^2)
 const OneHourInSeconds = 3600; // duration of the calculation in seconds (1 hour)
 const InitDistance = 0; // distance from reference point (km)
@@ -25,6 +25,6 @@ const NewVelocity = CalcNewVelocity(Acceleration , InitVelocityMps, OneHourInSec
 
 
 
-console.log(`Corrected New Velocity: ${NewVelocity} km/h`);
-console.log(`Corrected New Distance: ${NewDistance} km`);
-console.log(`Corrected Remaining Fuel: ${RemainingFuel} kg`);
+console.log('New Velocity: Approximately', NewVelocity, 'km/h', 'after correction'); 
+console.log('New Distance: Approximately', NewDistance, 'km', 'after correction');
+console.log('Remaining Fuel: Approximately', RemainingFuel, 'kg', 'after correction');
